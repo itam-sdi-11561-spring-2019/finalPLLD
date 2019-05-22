@@ -1,0 +1,8 @@
+prefix=/home/robotica/practica5-VillafuerteBrenes/Previos/devel
+
+Name: ejemplo
+Description: Description of ejemplo
+Version: 1.2.0
+Cflags: 
+Libs: -L/home/robotica/practica5-VillafuerteBrenes/Previos/devel/lib 
+Requires: 
