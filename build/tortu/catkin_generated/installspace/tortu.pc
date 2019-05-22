@@ -1,8 +1,8 @@
-prefix=/home/robotica/practica5-VillafuerteBrenes/Previos/install
+prefix=/home/robotica/finalMeca/install
 
 Name: tortu
 Description: Description of tortu
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/robotica/practica5-VillafuerteBrenes/Previos/install/lib 
+Libs: -L/home/robotica/finalMeca/install/lib 
 Requires: 

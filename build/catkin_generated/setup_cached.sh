@@ -7,9 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/robotica/practica5-VillafuerteBrenes/Previos/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/robotica/practica5-VillafuerteBrenes/Previos/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/robotica/practica5-VillafuerteBrenes/Previos/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD="/home/robotica/practica5-VillafuerteBrenes/Previos/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/robotica/practica5-VillafuerteBrenes/Previos/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/robotica/practica5-VillafuerteBrenes/Previos/src:$ROS_PACKAGE_PATH"
+export LD_LIBRARY_PATH="/opt/ros/kinetic/lib"
+export PKG_CONFIG_PATH="/opt/ros/kinetic/lib/pkgconfig"
+export PWD="/home/robotica/finalMeca/build"

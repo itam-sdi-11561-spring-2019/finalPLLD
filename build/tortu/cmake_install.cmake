@@ -1,8 +1,8 @@
-# Install script for directory: /home/robotica/practica5-VillafuerteBrenes/Previos/src/tortu
+# Install script for directory: /home/robotica/finalMeca/src/tortu
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/robotica/practica5-VillafuerteBrenes/Previos/install")
+  set(CMAKE_INSTALL_PREFIX "/home/robotica/finalMeca/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/robotica/practica5-VillafuerteBrenes/Previos/build/tortu/catkin_generated/installspace/tortu.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/robotica/finalMeca/build/tortu/catkin_generated/installspace/tortu.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tortu/cmake" TYPE FILE FILES
-    "/home/robotica/practica5-VillafuerteBrenes/Previos/build/tortu/catkin_generated/installspace/tortuConfig.cmake"
-    "/home/robotica/practica5-VillafuerteBrenes/Previos/build/tortu/catkin_generated/installspace/tortuConfig-version.cmake"
+    "/home/robotica/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig.cmake"
+    "/home/robotica/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tortu" TYPE FILE FILES "/home/robotica/practica5-VillafuerteBrenes/Previos/src/tortu/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tortu" TYPE FILE FILES "/home/robotica/finalMeca/src/tortu/package.xml")
 endif()
 

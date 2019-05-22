@@ -1,8 +1,8 @@
-# Install script for directory: /home/robotica/practica5-VillafuerteBrenes/Previos/src/ejemplo
+# Install script for directory: /home/robotica/finalMeca/src/ejemplo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/robotica/practica5-VillafuerteBrenes/Previos/install")
+  set(CMAKE_INSTALL_PREFIX "/home/robotica/finalMeca/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/robotica/practica5-VillafuerteBrenes/Previos/build/ejemplo/catkin_generated/installspace/ejemplo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/robotica/finalMeca/build/ejemplo/catkin_generated/installspace/ejemplo.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ejemplo/cmake" TYPE FILE FILES
-    "/home/robotica/practica5-VillafuerteBrenes/Previos/build/ejemplo/catkin_generated/installspace/ejemploConfig.cmake"
-    "/home/robotica/practica5-VillafuerteBrenes/Previos/build/ejemplo/catkin_generated/installspace/ejemploConfig-version.cmake"
+    "/home/robotica/finalMeca/build/ejemplo/catkin_generated/installspace/ejemploConfig.cmake"
+    "/home/robotica/finalMeca/build/ejemplo/catkin_generated/installspace/ejemploConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ejemplo" TYPE FILE FILES "/home/robotica/practica5-VillafuerteBrenes/Previos/src/ejemplo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ejemplo" TYPE FILE FILES "/home/robotica/finalMeca/src/ejemplo/package.xml")
 endif()
 

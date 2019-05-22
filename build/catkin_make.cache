@@ -1,2 +1,2 @@
 ejemplo:tortu
--DCATKIN_DEVEL_PREFIX=/home/robotica/practica5-VillafuerteBrenes/Previos/devel -DCMAKE_INSTALL_PREFIX=/home/robotica/practica5-VillafuerteBrenes/Previos/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/robotica/finalMeca/devel -DCMAKE_INSTALL_PREFIX=/home/robotica/finalMeca/install -G Unix Makefiles
