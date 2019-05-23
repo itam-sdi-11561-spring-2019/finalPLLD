@@ -1,8 +1,8 @@
-prefix=/home/robotica/finalMeca/install
+prefix=/home/robotica/FInalMeca/finalMeca/install
 
 Name: ejemplo
 Description: Description of ejemplo
 Version: 1.2.0
 Cflags: 
-Libs: -L/home/robotica/finalMeca/install/lib 
+Libs: -L/home/robotica/FInalMeca/finalMeca/install/lib 
 Requires: 

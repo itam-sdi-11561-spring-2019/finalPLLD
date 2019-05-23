@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robotica/finalMeca/src
+CMAKE_SOURCE_DIR = /home/robotica/FInalMeca/finalMeca/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robotica/finalMeca/build
+CMAKE_BINARY_DIR = /home/robotica/FInalMeca/finalMeca/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ tortu/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_empty_exported
 .PHONY : tortu/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 tortu/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/robotica/finalMeca/build/tortu && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/robotica/FInalMeca/finalMeca/build/tortu && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : tortu/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 tortu/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/robotica/finalMeca/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robotica/finalMeca/src /home/robotica/finalMeca/src/tortu /home/robotica/finalMeca/build /home/robotica/finalMeca/build/tortu /home/robotica/finalMeca/build/tortu/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/robotica/FInalMeca/finalMeca/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robotica/FInalMeca/finalMeca/src /home/robotica/FInalMeca/finalMeca/src/tortu /home/robotica/FInalMeca/finalMeca/build /home/robotica/FInalMeca/finalMeca/build/tortu /home/robotica/FInalMeca/finalMeca/build/tortu/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tortu/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

@@ -11,8 +11,8 @@ obs1 = Pose2D()
 obs2 = Pose2D()
 obs3 = Pose2D()
 obs4 = Pose2D()
-margen = math.pi/10
-limite = math.pi/4
+margen = math.pi/10 #el margen de error de ir derecho
+prefrenado = 10 #mm
 
 objetos = 0
 bmeta = False
@@ -46,19 +46,35 @@ def rotateLeft(magnitud):
 	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
 	while(abs(robot.theta-esperada)>margen):
 		diferencia = esperada - robot.theta
-		#Si aun le falta mas de .25 radianes por rotar, rota mucho a la izquierda 
-		if(diferencia>limite):
-			mandaInstruccion('1')
-		#Si le falta poquito por rotar, rota poco a la izquierda
-		elif(diferencia>0):
+		#Si aun le falta por rotar, rota mucho a la izquierda 
+		if(diferencia>0):
 			mandaInstruccion('2')
 		#Si se paso por poquito, gira poco a la derecha
-		elif(diferencia>-limite):
-			mandaInstruccion('4')
-		#Si se paso por mucho, gira mucho a la derecha
 		else:
-			mandaInstruccion('3')
+			mandaInstruccion('1')
 
+def rotateRight(magnitud):
+	''' La magnitud es que tanto girar y se da en radianes '''
+	actual = robot.theta
+	esperada = actual-magnitud
+	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
+	while(abs(robot.theta-esperada)>margen):
+		diferencia = robot.theta - esperada
+
+		if(diferencia>0):
+			mandaInstruccion('1')
+		else:
+			mandaInstruccion('2')
+
+def avanza(distancia):
+	posInicial = [robot.x, robot.y]
+	actual = [robot.x, robot.y]
+	recorrido = 0
+	while(abs(recorrido - distancia)>prefrenado):
+		actual = [robot.x, robot.y]
+		recorrido = math.sqrt(math.pow(actual[0]-posInicial[0],2)+math.pow(actual[1]-posInicial[1],2))
+		mandaInstruccion('0')
+	mandaInstruccion('3')
 
 
 def makeGrid(inicio, final, obstaculos):
@@ -81,10 +97,6 @@ def makeGrid(inicio, final, obstaculos):
 
     aStar([xMin, yMin])
     ruta.append([xMin, yMin])
-
-
-
-
 
 
 
@@ -145,22 +157,7 @@ def getRuta():
     return ruta
 
 
-def rotateRight(magnitud):
-	''' La magnitud es que tanto girar y se da en radianes '''
-	actual = robot.theta
-	esperada = actual-magnitud
-	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
-	while(abs(robot.theta-esperada)>margen):
-		diferencia = robo.theta - esperada
 
-		if(diferencia>limite):
-			mandaInstruccion('3')
-		elif(diferencia>0):
-			mandaInstruccion('4')
-		elif(diferencia>-limite):
-			mandaInstruccion('2')
-		else:
-			mandaInstruccion('1')
 
 def ejecutaPlan(plan):
 	for mov in plan:
@@ -178,8 +175,7 @@ def ejecutaPlan(plan):
 			rotateLeft(thetar)
 		elif thetar > margen and thetar > 0 :
 			rotateRight(thetar)
-		else:
-			avanza(c)
+		avanza(c)
 
 
 
@@ -194,7 +190,7 @@ def avanza(distancia):
 
 
 def mandaInstruccion(instruccion):
-	ser = serial.Serial('/dev/ttyUSB1')  # open serial port
+	ser = serial.Serial('/dev/ttyUSB0')  # open serial port
 	ser.write(instruccion)     # write a string
 	ser.close()
 	print instruccion
@@ -339,3 +335,4 @@ if __name__ == '__main__':
 		listener()
 	except rospy.ROSInterruptException:
 	    pass
+

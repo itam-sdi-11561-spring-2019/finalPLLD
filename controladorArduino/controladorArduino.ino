@@ -14,9 +14,9 @@ double t0, countE1, countE2, v1, v2, currentE1, currentE2;
 double en1, en2;
 double valorLuz;
 
-double kp[2] = {.025,.005};
-double ki[2] = {.015,.015};
-double kd[2] = {.1,.1};
+double kp[2] = {.004,.001};
+double ki[2] = {.005,.005};
+double kd[2] = {.01,.01};
 
 unsigned long prevTime[2];
 double lastError[2];
@@ -39,7 +39,7 @@ void setup() {
     t0 =0;
     setPoint1 = 0;
     setPoint2 = 0;
-    en1= digitalRead(A2);
+
     I[0] = 0;
     I[1] = 0;
     
@@ -78,7 +78,9 @@ void loop() {
  double currentTime = millis();
   if (currentTime - t0 >= 1000){
     v1 = ((countE1/18)*1000)/(currentTime-t0);
+   
     v2 = ((countE2/18)*1000)/(currentTime-t0);
+  
     t0 = 0;
     
     outM1 = PID(v1, 0, setPoint1);
@@ -89,40 +91,43 @@ void loop() {
      analogWrite(E2, outPWM1); 
      analogWrite(E1, outPWM2);
 
+     xbee.println(v1);
+     xbee.println(v2);
+     
+
 
  }
-
-
  
-   //Serial.println(v1);
- 
-  
-   
-     
-  // Serial.println(outM1);  
-
-  //Recibe la senal del xbee 
   if(xbee.available()){
-    senal = xbee.read();
-
-    switch(senal) {
-    case '0' :  
-      setPoint1 = 5;
-      setPoint2 = 5;
-      break;
-    case '1' : 
-      setPoint1 = 5;
-      setPoint2 = 0;
-      break;
-    case '2':
-      setPoint1 =  0;
-      setPoint2 = 5;
-      break;
-     case '3':
-      setPoint1 = 0;
-      setPoint2 = 0;
-      break;
-  }
+        senal = xbee.read();
+        switch(senal) {
+        case '0' :  
+          xbee.println("Entre a cero");
+          digitalWrite(I2, HIGH);// Arrancamos
+          digitalWrite(I1, LOW);
+          digitalWrite(I3, HIGH);     // Arrancamos
+          digitalWrite(I4, LOW);
+          setPoint1 = 2;
+          setPoint2 = 2;
+          break;
+        case '1' : 
+          digitalWrite(I2, LOW);// Arrancamos
+          digitalWrite(I1, HIGH);
+          setPoint1 = 2;
+          setPoint2 = 2;
+          break;
+        case '2':
+          digitalWrite(I3, LOW);     // Arrancamos
+          digitalWrite(I4, HIGH);
+          setPoint1 =  2;
+          setPoint2 = 2;
+          
+          break;
+         case '3':
+          setPoint1 = 0;
+          setPoint2 = 0;
+          break;
+      }
 
    
   }
@@ -132,29 +137,6 @@ void loop() {
 
 }
 
-void lineaRecta(){
-   //Serial.println("Entro");
-   outM1 = PID(v1, 0, 5);
-   outM2 = PID(v2, 1, 5);
-   
-   double outPWM1 = min(abs(outM1), 255);
-   double outPWM2 = min(abs(outM2), 255);
-   analogWrite(E2, outPWM1); 
-   analogWrite(E1, outPWM2); 
-   
-}
-
-void izquierda(){
-   Serial.println("Entro");
-   outM1 = PID(v1, 0, 6);
-   outM2 = PID(v2, 1, 1);
-   
-   double outPWM1 = min(abs(outM1), 255);
-   double outPWM2 = min(abs(outM2), 255);
-   analogWrite(E2, outPWM1); 
-   analogWrite(E1, outPWM2); 
-   
-}
 
 
 double PID(double e , int m,  double setPoint){

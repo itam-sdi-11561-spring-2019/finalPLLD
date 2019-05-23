@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robotica/finalMeca/src
+CMAKE_SOURCE_DIR = /home/robotica/FInalMeca/finalMeca/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robotica/finalMeca/build
+CMAKE_BINARY_DIR = /home/robotica/FInalMeca/finalMeca/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/robotica/finalMeca/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robotica/finalMeca/src /home/robotica/finalMeca/src /home/robotica/finalMeca/build /home/robotica/finalMeca/build /home/robotica/finalMeca/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/robotica/FInalMeca/finalMeca/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/robotica/FInalMeca/finalMeca/src /home/robotica/FInalMeca/finalMeca/src /home/robotica/FInalMeca/finalMeca/build /home/robotica/FInalMeca/finalMeca/build /home/robotica/FInalMeca/finalMeca/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

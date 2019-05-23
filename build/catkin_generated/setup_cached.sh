@@ -7,6 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH="/opt/ros/kinetic/lib"
-export PKG_CONFIG_PATH="/opt/ros/kinetic/lib/pkgconfig"
-export PWD="/home/robotica/finalMeca/build"
+export CMAKE_PREFIX_PATH="/home/robotica/FInalMeca/finalMeca/devel:$CMAKE_PREFIX_PATH"
+export PWD="/home/robotica/FInalMeca/finalMeca/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/robotica/FInalMeca/finalMeca/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/robotica/FInalMeca/finalMeca/src:$ROS_PACKAGE_PATH"
