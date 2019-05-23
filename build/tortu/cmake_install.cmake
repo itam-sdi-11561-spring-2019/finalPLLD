@@ -1,8 +1,8 @@
-# Install script for directory: /home/robotica/FInalMeca/finalMeca/src/tortu
+# Install script for directory: /home/egranadoo/lab_principios_jch/final/finalMeca/src/tortu
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/robotica/FInalMeca/finalMeca/install")
+  set(CMAKE_INSTALL_PREFIX "/home/egranadoo/lab_principios_jch/final/finalMeca/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -29,21 +29,26 @@ endif()
 
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
+  set(CMAKE_INSTALL_SO_NO_EXE "0")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/robotica/FInalMeca/finalMeca/build/tortu/catkin_generated/installspace/tortu.pc")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/egranadoo/lab_principios_jch/final/finalMeca/build/tortu/catkin_generated/installspace/tortu.pc")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tortu/cmake" TYPE FILE FILES
-    "/home/robotica/FInalMeca/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig.cmake"
-    "/home/robotica/FInalMeca/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig-version.cmake"
+    "/home/egranadoo/lab_principios_jch/final/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig.cmake"
+    "/home/egranadoo/lab_principios_jch/final/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig-version.cmake"
     )
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tortu" TYPE FILE FILES "/home/robotica/FInalMeca/finalMeca/src/tortu/package.xml")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tortu" TYPE FILE FILES "/home/egranadoo/lab_principios_jch/final/finalMeca/src/tortu/package.xml")
 endif()
 

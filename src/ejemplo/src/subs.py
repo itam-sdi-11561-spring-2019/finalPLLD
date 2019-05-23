@@ -11,7 +11,7 @@ obs1 = Pose2D()
 obs2 = Pose2D()
 obs3 = Pose2D()
 obs4 = Pose2D()
-margen = math.pi/10 #el margen de error de ir derecho
+margen = math.pi #el margen de error de ir derecho
 prefrenado = 10 #mm
 
 objetos = 0
@@ -27,10 +27,10 @@ xMin = 0
 yMin = 0
 yMax = 0
 
-dx = 16
-dy = 16
+dx = 200
+dy = 200
 
-r = 5
+r = 130
 
 V  = [];
 ruta = [];
@@ -45,13 +45,15 @@ def rotateLeft(magnitud):
 	esperada = actual+magnitud
 	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
 	while(abs(robot.theta-esperada)>margen):
-		diferencia = esperada - robot.theta
+		diferencia = abs(esperada - robot.theta)
 		#Si aun le falta por rotar, rota mucho a la izquierda 
-		if(diferencia>0):
+		if(diferencia>margen):
 			mandaInstruccion('2')
+			
 		#Si se paso por poquito, gira poco a la derecha
 		else:
 			mandaInstruccion('1')
+			
 
 def rotateRight(magnitud):
 	''' La magnitud es que tanto girar y se da en radianes '''
@@ -59,12 +61,14 @@ def rotateRight(magnitud):
 	esperada = actual-magnitud
 	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
 	while(abs(robot.theta-esperada)>margen):
-		diferencia = robot.theta - esperada
+		diferencia = abs(robot.theta - esperada)
 
-		if(diferencia>0):
+		if(diferencia > margen):
 			mandaInstruccion('1')
+		
 		else:
 			mandaInstruccion('2')
+			
 
 def avanza(distancia):
 	posInicial = [robot.x, robot.y]
@@ -79,15 +83,15 @@ def avanza(distancia):
 
 def makeGrid(inicio, final, obstaculos):
     global xMax, xMin, yMin, yMax, numObs, NO
-    xMax = final.x - inicio.x - dx/2
+    xMax = final.x  - dx/2
     xMin = inicio.x + dx/2
     print "Aqui va el inicio"
     print inicio
     print "Y la meta"
     print final
 
-    yMax = abs(final.y - inicio.y) - dy/2
-    yMin = min(final.y, inicio.y) + dy/2
+    yMax = final.y - dy/2
+    yMin =  inicio.y + dy/2
 
 
     for o in obstaculos:
@@ -204,7 +208,7 @@ def callbackRobot(data):
 	robot.theta = data.theta
 	print "hola, ya estoy aqui"
 
-	if(bmeta and objetos > 2):
+	if(bmeta):
 		print "ya entre al iffff"
 		obs = []
 		if(bobs0):

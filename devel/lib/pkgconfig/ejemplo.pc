@@ -1,8 +1,8 @@
-prefix=/home/robotica/FInalMeca/finalMeca/devel
+prefix=/home/egranadoo/lab_principios_jch/final/finalMeca/devel
 
 Name: ejemplo
 Description: Description of ejemplo
 Version: 1.2.0
 Cflags: 
-Libs: -L/home/robotica/FInalMeca/finalMeca/devel/lib 
+Libs: -L/home/egranadoo/lab_principios_jch/final/finalMeca/devel/lib 
 Requires: 
