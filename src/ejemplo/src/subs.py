@@ -11,7 +11,7 @@ obs1 = Pose2D()
 obs2 = Pose2D()
 obs3 = Pose2D()
 obs4 = Pose2D()
-margen = math.pi #el margen de error de ir derecho
+margen = math.pi/6 #el margen de error de ir derecho
 prefrenado = 10 #mm
 
 objetos = 0
@@ -43,8 +43,10 @@ def rotateLeft(magnitud):
 	''' La magnitud es que tanto girar y se da en radianes '''
 	actual = robot.theta
 	esperada = actual+magnitud
+	sec = 2 
 	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
 	while(abs(robot.theta-esperada)>margen):
+		sec = sec/2 
 		diferencia = abs(esperada - robot.theta)
 		#Si aun le falta por rotar, rota mucho a la izquierda 
 		if(diferencia>margen):
@@ -53,14 +55,21 @@ def rotateLeft(magnitud):
 		#Si se paso por poquito, gira poco a la derecha
 		else:
 			mandaInstruccion('1')
+
+		
+		rospy.sleep(sec)
+		mandaInstruccion('3')
+		
 			
 
 def rotateRight(magnitud):
 	''' La magnitud es que tanto girar y se da en radianes '''
 	actual = robot.theta
 	esperada = actual-magnitud
+	sec = 2 
 	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
 	while(abs(robot.theta-esperada)>margen):
+		sec = sec/2 
 		diferencia = abs(robot.theta - esperada)
 
 		if(diferencia > margen):
@@ -68,6 +77,10 @@ def rotateRight(magnitud):
 		
 		else:
 			mandaInstruccion('2')
+		
+		rospy.sleep(sec)
+		mandaInstruccion('3')
+		
 			
 
 def avanza(distancia):
@@ -173,13 +186,14 @@ def ejecutaPlan(plan):
 		b = ymeta - yactual
 		c = math.sqrt(a*a+b*b)
 		theta0 = robot.theta
-		theta1 = math.acos(b/c)
+		theta1 = math.acos(a/c)
 		thetar = theta1 - theta0
 		if thetar < margen and thetar < 0:
 			rotateLeft(thetar)
 		elif thetar > margen and thetar > 0 :
 			rotateRight(thetar)
 		avanza(c)
+	mandaInstruccion('3')
 
 
 
@@ -194,7 +208,7 @@ def avanza(distancia):
 
 
 def mandaInstruccion(instruccion):
-	ser = serial.Serial('/dev/ttyUSB0')  # open serial port
+	ser = serial.Serial('/dev/ttyUSB1')  # open serial port
 	ser.write(instruccion)     # write a string
 	ser.close()
 	print instruccion
@@ -339,4 +353,5 @@ if __name__ == '__main__':
 		listener()
 	except rospy.ROSInterruptException:
 	    pass
+
 
