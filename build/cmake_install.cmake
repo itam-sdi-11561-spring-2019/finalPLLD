@@ -1,8 +1,8 @@
-# Install script for directory: /home/egranadoo/finalMeca/src
+# Install script for directory: /home/mborgec/finalMeca/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/egranadoo/finalMeca/install")
+  set(CMAKE_INSTALL_PREFIX "/home/mborgec/finalMeca/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,80 +49,80 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/egranadoo/finalMeca/install/_setup_util.py")
+   "/home/mborgec/finalMeca/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/egranadoo/finalMeca/install" TYPE PROGRAM FILES "/home/egranadoo/finalMeca/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/mborgec/finalMeca/install" TYPE PROGRAM FILES "/home/mborgec/finalMeca/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/egranadoo/finalMeca/install/env.sh")
+   "/home/mborgec/finalMeca/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/egranadoo/finalMeca/install" TYPE PROGRAM FILES "/home/egranadoo/finalMeca/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/mborgec/finalMeca/install" TYPE PROGRAM FILES "/home/mborgec/finalMeca/build/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/egranadoo/finalMeca/install/setup.bash")
+   "/home/mborgec/finalMeca/install/setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/egranadoo/finalMeca/install" TYPE FILE FILES "/home/egranadoo/finalMeca/build/catkin_generated/installspace/setup.bash")
+file(INSTALL DESTINATION "/home/mborgec/finalMeca/install" TYPE FILE FILES "/home/mborgec/finalMeca/build/catkin_generated/installspace/setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/egranadoo/finalMeca/install/setup.sh")
+   "/home/mborgec/finalMeca/install/setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/egranadoo/finalMeca/install" TYPE FILE FILES "/home/egranadoo/finalMeca/build/catkin_generated/installspace/setup.sh")
+file(INSTALL DESTINATION "/home/mborgec/finalMeca/install" TYPE FILE FILES "/home/mborgec/finalMeca/build/catkin_generated/installspace/setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/egranadoo/finalMeca/install/setup.zsh")
+   "/home/mborgec/finalMeca/install/setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/egranadoo/finalMeca/install" TYPE FILE FILES "/home/egranadoo/finalMeca/build/catkin_generated/installspace/setup.zsh")
+file(INSTALL DESTINATION "/home/mborgec/finalMeca/install" TYPE FILE FILES "/home/mborgec/finalMeca/build/catkin_generated/installspace/setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/egranadoo/finalMeca/install/.rosinstall")
+   "/home/mborgec/finalMeca/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/egranadoo/finalMeca/install" TYPE FILE FILES "/home/egranadoo/finalMeca/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/mborgec/finalMeca/install" TYPE FILE FILES "/home/mborgec/finalMeca/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/egranadoo/finalMeca/build/tortu/cmake_install.cmake")
-  include("/home/egranadoo/finalMeca/build/ejemplo/cmake_install.cmake")
+  include("/home/mborgec/finalMeca/build/tortu/cmake_install.cmake")
+  include("/home/mborgec/finalMeca/build/ejemplo/cmake_install.cmake")
 
 endif()
 
@@ -134,5 +134,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/egranadoo/finalMeca/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mborgec/finalMeca/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

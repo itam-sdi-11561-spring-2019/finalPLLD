@@ -7,7 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/egranadoo/finalMeca/devel:$CMAKE_PREFIX_PATH"
-export PWD="/home/egranadoo/finalMeca/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/egranadoo/finalMeca/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/egranadoo/finalMeca/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/mborgec/finalMeca/devel:$CMAKE_PREFIX_PATH"
+export PWD="/home/mborgec/finalMeca/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/mborgec/finalMeca/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/mborgec/finalMeca/src:$ROS_PACKAGE_PATH"

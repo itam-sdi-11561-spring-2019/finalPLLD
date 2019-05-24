@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/egranadoo/finalMeca/src
+CMAKE_SOURCE_DIR = /home/mborgec/finalMeca/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/egranadoo/finalMeca/build
+CMAKE_BINARY_DIR = /home/mborgec/finalMeca/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/egranadoo/finalMeca/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/egranadoo/finalMeca/src /home/egranadoo/finalMeca/src /home/egranadoo/finalMeca/build /home/egranadoo/finalMeca/build /home/egranadoo/finalMeca/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mborgec/finalMeca/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mborgec/finalMeca/src /home/mborgec/finalMeca/src /home/mborgec/finalMeca/build /home/mborgec/finalMeca/build /home/mborgec/finalMeca/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

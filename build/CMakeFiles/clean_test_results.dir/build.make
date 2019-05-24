@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/egranadoo/finalMeca/src
+CMAKE_SOURCE_DIR = /home/mborgec/finalMeca/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/egranadoo/finalMeca/build
+CMAKE_BINARY_DIR = /home/mborgec/finalMeca/build
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/egranadoo/finalMeca/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python /opt/ros/kinetic/ros_catkin_ws/install_isolated/share/catkin/cmake/test/remove_test_results.py /home/egranadoo/finalMeca/build/test_results
+	/usr/bin/python /opt/ros/kinetic/ros_catkin_ws/install_isolated/share/catkin/cmake/test/remove_test_results.py /home/mborgec/finalMeca/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/egranadoo/finalMeca/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/egranadoo/finalMeca/src /home/egranadoo/finalMeca/src /home/egranadoo/finalMeca/build /home/egranadoo/finalMeca/build /home/egranadoo/finalMeca/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mborgec/finalMeca/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mborgec/finalMeca/src /home/mborgec/finalMeca/src /home/mborgec/finalMeca/build /home/mborgec/finalMeca/build /home/mborgec/finalMeca/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 

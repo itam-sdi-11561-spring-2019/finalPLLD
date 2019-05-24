@@ -11,7 +11,7 @@ obs1 = Pose2D()
 obs2 = Pose2D()
 obs3 = Pose2D()
 obs4 = Pose2D()
-margen = math.pi/6 #el margen de error de ir derecho
+margen = math.pi/2 #el margen de error de ir derecho
 prefrenado = 10 #mm
 
 objetos = 0
@@ -30,7 +30,7 @@ yMax = 0
 dx = 200
 dy = 200
 
-r = 130
+r = 100
 
 V  = [];
 ruta = [];
@@ -45,9 +45,9 @@ def rotateLeft(magnitud):
 	esperada = actual+magnitud
 	sec = 2 
 	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
-	while(abs(robot.theta-esperada)>margen):
+	while(abs(robot.theta-esperada) % math.pi*2 >margen):
 		sec = sec/2 
-		diferencia = abs(esperada - robot.theta)
+		diferencia = abs(esperada - robot.theta) % math.pi*2
 		#Si aun le falta por rotar, rota mucho a la izquierda 
 		if(diferencia>margen):
 			mandaInstruccion('2')
@@ -57,8 +57,8 @@ def rotateLeft(magnitud):
 			mandaInstruccion('1')
 
 		
-		rospy.sleep(sec)
-		mandaInstruccion('3')
+		#rospy.sleep(sec)
+		#mandaInstruccion('3')
 		
 			
 
@@ -68,9 +68,9 @@ def rotateRight(magnitud):
 	esperada = actual-magnitud
 	sec = 2 
 	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
-	while(abs(robot.theta-esperada)>margen):
+	while(abs(robot.theta-esperada) % math.pi*2 >margen):
 		sec = sec/2 
-		diferencia = abs(robot.theta - esperada)
+		diferencia = abs(robot.theta - esperada) % math.pi*2
 
 		if(diferencia > margen):
 			mandaInstruccion('1')
@@ -78,8 +78,8 @@ def rotateRight(magnitud):
 		else:
 			mandaInstruccion('2')
 		
-		rospy.sleep(sec)
-		mandaInstruccion('3')
+		#rospy.sleep(sec)
+		#mandaInstruccion('3')
 		
 			
 
@@ -143,11 +143,10 @@ def getNext(n):
     sumx = -1
     for i in range(0,3):
         sumy = -1;
-        nX = min(n[0] + dx*sumx, xMax)
+        nX = n[0] + dx*sumx
 	
         for j in range(0,3):
-            nY = min(n[1] + dy*sumy, yMax)
-	  
+            nY = n[1] + dy*sumy
             if [nX, nY] not in V:
                 notBlock = True
                 k = 0
@@ -185,16 +184,16 @@ def ejecutaPlan(plan):
 		ymeta = mov[1]
 		xactual = robot.x
 		yactual = robot.y
-		a = xmeta - xactual
-		b = ymeta - yactual
+		a = abs(xmeta - xactual)
+		b = (ymeta - yactual)
 		c = math.sqrt(a*a+b*b)
 		theta0 = robot.theta
 		theta1 = math.acos(a/c)
-		thetar = theta1 - theta0
-		if thetar < margen and thetar < 0:
-			rotateLeft(thetar)
-		elif thetar > margen and thetar > 0 :
-			rotateRight(thetar)
+		thetar = (theta1 - theta0) % math.pi*2
+		#if thetar < margen and thetar < 0:
+		#	rotateLeft(thetar)
+		#elif thetar > margen and thetar > 0 :
+		#	rotateRight(thetar)
 		avanza(c)
 		paso = paso +1 
 	mandaInstruccion('3')
@@ -212,7 +211,7 @@ def avanza(distancia):
 
 
 def mandaInstruccion(instruccion):
-	ser = serial.Serial('/dev/ttyUSB1')  # open serial port
+	ser = serial.Serial('/dev/ttyUSB0')  # open serial port
 	ser.write(instruccion)     # write a string
 	ser.close()
 	print instruccion
@@ -222,7 +221,7 @@ def callbackRobot(data):
 	global robot
 	global objetos
 	robot.x = data.x
-	robot.y = data.y
+	robot.y = data.y	
 	robot.theta = data.theta
 	print "hola, ya estoy aqui"
 

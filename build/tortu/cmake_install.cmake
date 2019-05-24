@@ -1,8 +1,8 @@
-# Install script for directory: /home/egranadoo/finalMeca/src/tortu
+# Install script for directory: /home/mborgec/finalMeca/src/tortu
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/egranadoo/finalMeca/install")
+  set(CMAKE_INSTALL_PREFIX "/home/mborgec/finalMeca/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/egranadoo/finalMeca/build/tortu/catkin_generated/installspace/tortu.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mborgec/finalMeca/build/tortu/catkin_generated/installspace/tortu.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tortu/cmake" TYPE FILE FILES
-    "/home/egranadoo/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig.cmake"
-    "/home/egranadoo/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig-version.cmake"
+    "/home/mborgec/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig.cmake"
+    "/home/mborgec/finalMeca/build/tortu/catkin_generated/installspace/tortuConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tortu" TYPE FILE FILES "/home/egranadoo/finalMeca/src/tortu/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/tortu" TYPE FILE FILES "/home/mborgec/finalMeca/src/tortu/package.xml")
 endif()
 

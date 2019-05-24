@@ -1,2 +1,2 @@
 ejemplo:tortu
--DCATKIN_DEVEL_PREFIX=/home/egranadoo/finalMeca/devel -DCMAKE_INSTALL_PREFIX=/home/egranadoo/finalMeca/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/mborgec/finalMeca/devel -DCMAKE_INSTALL_PREFIX=/home/mborgec/finalMeca/install -G Unix Makefiles

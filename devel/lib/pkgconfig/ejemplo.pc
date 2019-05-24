@@ -1,8 +1,8 @@
-prefix=/home/egranadoo/finalMeca/devel
+prefix=/home/mborgec/finalMeca/devel
 
 Name: ejemplo
 Description: Description of ejemplo
 Version: 1.2.0
 Cflags: 
-Libs: -L/home/egranadoo/finalMeca/devel/lib 
+Libs: -L/home/mborgec/finalMeca/devel/lib 
 Requires: 
