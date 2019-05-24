@@ -1,2 +1,2 @@
-# PM_pract_5
-Archivos iniciales para la práctica 5 (ROS) Principios de Mecatrónica
+# Proyecto final Equipo Paola del Hierro, Luis Delfin, Leslie Brennes y Diego Villafuerte
+El archivo a correr es subs.py en el nodo ejemplo
