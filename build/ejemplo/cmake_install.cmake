@@ -1,8 +1,8 @@
-# Install script for directory: /home/egranadoo/lab_principios_jch/final/finalMeca/src/ejemplo
+# Install script for directory: /home/egranadoo/finalMeca/src/ejemplo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/egranadoo/lab_principios_jch/final/finalMeca/install")
+  set(CMAKE_INSTALL_PREFIX "/home/egranadoo/finalMeca/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/egranadoo/lab_principios_jch/final/finalMeca/build/ejemplo/catkin_generated/installspace/ejemplo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/egranadoo/finalMeca/build/ejemplo/catkin_generated/installspace/ejemplo.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ejemplo/cmake" TYPE FILE FILES
-    "/home/egranadoo/lab_principios_jch/final/finalMeca/build/ejemplo/catkin_generated/installspace/ejemploConfig.cmake"
-    "/home/egranadoo/lab_principios_jch/final/finalMeca/build/ejemplo/catkin_generated/installspace/ejemploConfig-version.cmake"
+    "/home/egranadoo/finalMeca/build/ejemplo/catkin_generated/installspace/ejemploConfig.cmake"
+    "/home/egranadoo/finalMeca/build/ejemplo/catkin_generated/installspace/ejemploConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ejemplo" TYPE FILE FILES "/home/egranadoo/lab_principios_jch/final/finalMeca/src/ejemplo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ejemplo" TYPE FILE FILES "/home/egranadoo/finalMeca/src/ejemplo/package.xml")
 endif()
 

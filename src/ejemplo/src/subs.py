@@ -177,7 +177,10 @@ def getRuta():
 
 
 def ejecutaPlan(plan):
+	paso = 0
 	for mov in plan:
+		print('Paso no: ')		
+		print(paso)
 		xmeta = mov[0]
 		ymeta = mov[1]
 		xactual = robot.x
@@ -193,6 +196,7 @@ def ejecutaPlan(plan):
 		elif thetar > margen and thetar > 0 :
 			rotateRight(thetar)
 		avanza(c)
+		paso = paso +1 
 	mandaInstruccion('3')
 
 

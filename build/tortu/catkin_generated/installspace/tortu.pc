@@ -1,8 +1,8 @@
-prefix=/home/egranadoo/lab_principios_jch/final/finalMeca/install
+prefix=/home/egranadoo/finalMeca/install
 
 Name: tortu
 Description: Description of tortu
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/egranadoo/lab_principios_jch/final/finalMeca/install/lib 
+Libs: -L/home/egranadoo/finalMeca/install/lib 
 Requires: 
