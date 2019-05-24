@@ -11,7 +11,7 @@ obs1 = Pose2D()
 obs2 = Pose2D()
 obs3 = Pose2D()
 obs4 = Pose2D()
-margen = math.pi/2 #el margen de error de ir derecho
+margen = math.pi/6 #el margen de error de ir derecho
 prefrenado = 10 #mm
 
 objetos = 0
@@ -21,6 +21,7 @@ bobs1 = False
 bobs2 = False
 bobs3 = False
 bobs4 = False
+bplan = False
 
 xMax = 0
 xMin = 0
@@ -41,8 +42,8 @@ NO = [];
 
 def rotateLeft(magnitud):
 	''' La magnitud es que tanto girar y se da en radianes '''
-	actual = robot.theta
-	esperada = actual+magnitud
+	actual = robot.theta 
+	esperada = magnitud 
 	sec = 2 
 	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
 	while(abs(robot.theta-esperada) % math.pi*2 >margen):
@@ -59,16 +60,20 @@ def rotateLeft(magnitud):
 		
 		#rospy.sleep(sec)
 		#mandaInstruccion('3')
+		print('Angulo robot')
+		print(robot.theta)
+		print('Angulo esperado')
+		print(esperada)
 		
 			
 
 def rotateRight(magnitud):
 	''' La magnitud es que tanto girar y se da en radianes '''
 	actual = robot.theta
-	esperada = actual-magnitud
+	esperada = magnitud 
 	sec = 2 
 	#Mientras la diferencia sea mayor a .05 radianes, sigue rotando
-	while(abs(robot.theta-esperada) % math.pi*2 >margen):
+	while(abs(robot.theta - esperada) % math.pi*2 > margen):
 		sec = sec/2 
 		diferencia = abs(robot.theta - esperada) % math.pi*2
 
@@ -80,6 +85,10 @@ def rotateRight(magnitud):
 		
 		#rospy.sleep(sec)
 		#mandaInstruccion('3')
+		print('Angulo robot')
+		print(robot.theta)
+		print('Angulo esperado')
+		print(esperada)
 		
 			
 
@@ -185,15 +194,17 @@ def ejecutaPlan(plan):
 		xactual = robot.x
 		yactual = robot.y
 		a = abs(xmeta - xactual)
-		b = (ymeta - yactual)
+		b = abs(ymeta - yactual)
 		c = math.sqrt(a*a+b*b)
-		theta0 = robot.theta
-		theta1 = math.acos(a/c)
-		thetar = (theta1 - theta0) % math.pi*2
-		#if thetar < margen and thetar < 0:
-		#	rotateLeft(thetar)
-		#elif thetar > margen and thetar > 0 :
-		#	rotateRight(thetar)
+		theta0 = robot.theta 
+		theta1 = math.acos(b/c) 
+		thetar = (theta1 - theta0)  % math.pi*2
+		if thetar < margen and thetar < 0:
+			rotateLeft(theta1)
+			mandaInstruccion('3')
+		elif thetar > margen and thetar > 0 :
+			rotateRight(theta1)
+			mandaInstruccion('3')
 		avanza(c)
 		paso = paso +1 
 	mandaInstruccion('3')
@@ -208,6 +219,7 @@ def avanza(distancia):
 		actual = [robot.x, robot.y]
 		recorrido = math.sqrt(math.pow(actual[0]-posInicial[0],2)+math.pow(actual[1]-posInicial[1],2))
 		mandaInstruccion('0')
+	mandaInstruccion('3')
 
 
 def mandaInstruccion(instruccion):
@@ -220,10 +232,12 @@ def mandaInstruccion(instruccion):
 def callbackRobot(data):
 	global robot
 	global objetos
+	global bplan
+	global bmeta
 	robot.x = data.x
 	robot.y = data.y	
 	robot.theta = data.theta
-	print "hola, ya estoy aqui"
+	
 
 	if(bmeta):
 		print "ya entre al iffff"
@@ -238,12 +252,12 @@ def callbackRobot(data):
 			obs.append(obs3)
 		if(bobs4):
 			obs.append(obs4)
-
-		makeGrid(robot, meta, obs)
 		
-		ruta = getRuta()
-		print ruta
-		ejecutaPlan(ruta)
+		makeGrid(robot, meta, obs)
+		bplan = True
+		print "Ya pase bplan"
+		bmeta = False
+		
 	#print "La ubicacion del robot es x: %(x)s y: %(y)s theta: %(t)s " % {'x': robot.x, 'y': robot.y, 't':robot.theta}
 
 
@@ -251,7 +265,7 @@ def callbackMeta(data):
 	global meta
 	global bmeta
 	global objetos
-	if(not bmeta):
+	if(not bmeta and not bplan):
 		print "la meta si la recibi"
 		meta.x = data.x
 		meta.y = data.y
@@ -348,8 +362,14 @@ def listener():
   #robot
   rospy.Subscriber("/y_r0", Pose2D, callbackRobot)
 
+  while not rospy.is_shutdown():
+   	if(bplan):
+		ruta = getRuta()
+		print ruta
+		ejecutaPlan(ruta)
+
   # spin() simply keeps python from exiting until this node is stopped
-  rospy.spin()
+  rospy.spinOnce()
 
 if __name__ == '__main__':
 	try:
